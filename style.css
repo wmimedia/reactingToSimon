@@ -1,0 +1,55 @@
+html{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: url('http://www.walldevil.com/wallpapers/a18/wallpaper-green-blue-yellow-red-blackwhite28-desktop.jpg');
+}
+
+
+header{
+    text-align: center;
+    font-size: 8em;
+    color: white;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 15em;
+}
+
+.button{
+    position: relative;
+    height:350px;
+    width: 350px;
+}
+
+.green{
+    background-color: green;
+    height:350px;
+    width: 350px;
+    color: transparent;
+}
+
+.red{
+    background-color: red;
+    height:350px;
+    width: 350px;
+    color: transparent;
+
+}
+
+.yellow{
+    background-color: yellow;
+    height:350px;
+    width: 350px;
+    color: transparent;
+}
+
+.blue{
+    background-color: blue;
+    height:350px;
+    width: 350px;
+    color: transparent;
+}
