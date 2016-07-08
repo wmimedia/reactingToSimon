@@ -17,39 +17,53 @@ header{
     justify-content: center;
     flex-wrap: wrap;
     margin: 0 15em;
+    flex-direction: row;
+    padding:5px;
+}
+
+.container > button{
+    flex: 0 1 100%;
+    margin: 0 40em;
 }
 
 .button{
     position: relative;
-    height:350px;
-    width: 350px;
+    width:230px;
+    height:230px;
+    margin: 2em 3em;
+    border-radius: 3px;
+    box-shadow: 0 5px 0px;
+    border-bottom: 1px solid rgba(179, 179, 179, .6);
+    border-right: 1px solid rgba(179, 179, 179, .6);
+}
+
+.button:hover{
+    border-bottom: 2px solid rgba(179, 179, 179, .8);
+    border-right: 2px solid rgba(179, 179, 179, .7);
+}
+
+.button:active{
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transition: all 0.05s ease-in;
+  transform:translateY(4px);
+  border-bottom-width: 2px;
+  box-shadow: none;
 }
 
 .green{
     background-color: green;
-    height:350px;
-    width: 350px;
-    color: transparent;
 }
 
 .red{
     background-color: red;
-    height:350px;
-    width: 350px;
-    color: transparent;
 
 }
 
 .yellow{
     background-color: yellow;
-    height:350px;
-    width: 350px;
-    color: transparent;
 }
 
 .blue{
     background-color: blue;
-    height:350px;
-    width: 350px;
-    color: transparent;
 }
