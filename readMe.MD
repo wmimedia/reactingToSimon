@@ -66,20 +66,26 @@ The game is SIMON! Press start and simon will tell you what button to click. Cli
 0 As a user, I want the Simon game to tell me when I'm wrong, so that the game can reset- 1 COMPLETE JULY 9
 
 
-5. xx- MVP(Minimum Viable Product) PLAN -xx
+-MVP(Minimum Viable Product) PLAN -
+
 -Bronze- COMPLETE July 9
 
 -page renders Simon Game on load from a GH-Pages WebSite-
+
 -Simon Game functions in accordance with all user stories labeled at the bronze level
+
 -project workflow is consistent with parameters set forth on Friday
+
 -code is readable and refactored to meet presentation requirement
 
 -Silver-
+
 -All Bronze level criteria has been met
+
 -Simon Game functions in accordance with all user stories labeled at the bronze & silver level
 
-
 -Gold-
+
 -React-
 
 ## Credits
