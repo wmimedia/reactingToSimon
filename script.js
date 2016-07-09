@@ -150,5 +150,4 @@ $(document).ready(function() {
     });
 });
 
-//sorten the sound files in audacity so that there play clears out quickly and can be played even when a button is double clicked
 //make it so that you can interact with the buttons seperatly of the logic being called probably by putting a conditional at the start of the click handelers checking for a computer move set length

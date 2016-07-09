@@ -1,20 +1,19 @@
-I built this app in jquery/vanilla js for my first WDI project
-I'm working now on building it in react before Wednesday of next week to see if it's something I can implement
-
--Steps taken from the project page-
-1) Break the project down into different components (data, presentation, views, style, DOM manipulation) and brainstorm each component individually. Use whiteboards!
-
-2) Use your Development Tools (console.log, inspector, alert statements, etc) to debug and solve problems
-    Work through the lessons in class & ask questions when you need to! Think about adding relevant code to your game each night, instead of, you know... procrastinating.
-
-3) Commit early, commit often. Don’t be afraid to break something because you can always go back in time to a previous version.
-
-4) Consult documentation resources (MDN, jQuery, etc.) at home to better understand what you’ll be getting into.
-
-5) Don’t be afraid to write code that you know you will have to remove later. Create temporary elements (buttons, links, etc) that trigger events if real data is not available. For example, if          you’re trying to figure out how to change some text when the game is over but you haven’t solved the win/lose game logic, you can create a button to simulate that until then.
-
-
--User Story method below-
+<snippet>
+  <content><![CDATA[
+# ${1:reactingToSimon}
+TODO: I built this app in jquery/vanilla js for my first WDI project. The entire app took about a day to put together. I'm now working on building it in react before Wednesday of next week to see if it's something I can implement(I want a live scoreboard, some variations, and just want to try the challenge).
+## Installation
+TODO: You can find the MVP app that I put together listed here - https://chris-a-phillips.github.io/reactingToSimon/-
+## Usage
+TODO: The game is SIMON! Press start and simon will tell you what button to click. Click back and Simon will repeat this patter followed by one new entry. Continue until you miss the pattern
+## Contributing
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
+## History
+TODO: -User Story method below-
 
 xx- User Stories -xx (Stories will be marked on the Right as they have been added. They will be 0 indexed so you can see what day of the project they were added - Stories will be marked on the left as priority for Bronze, Silver, Gold MVP plan with 1 being Bronze, 2 Silver, and 3 Gold - All ones should be completed before moving on to 2's and same for 3. The commit history will reflect the stories being worked on with a similar naming convention)
 
@@ -62,3 +61,11 @@ xx- MVP(Minimum Viable Product) PLAN -xx
 
 -Gold-
 -React-
+
+## Credits
+TODO:
+## License
+TODO: open source by chris-a-phillips
+]]></content>
+  <tabTrigger>readme</tabTrigger>
+</snippet>
