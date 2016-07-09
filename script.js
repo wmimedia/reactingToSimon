@@ -58,12 +58,17 @@ var simon = {
                 }(i));
             }
         },
-        simonKnows: function(userMoveSet,simonMoveSet){
-            for(i=0;i<simon.brain.userMoveSet.length;i++){
-                if(simon.brain.userMoveSet[i] !== simon.brain.simonMoveSet[i]){
-                    return false;
+        simonKnows: function(){
+            if(simon.brain.userMoveSet.length !== simon.brain.simonMoveSet.length){
+                return false;
+            }else{
+                for(i=0;i<simon.brain.userMoveSet.length;i++){
+                    if(simon.brain.userMoveSet[i] !== simon.brain.simonMoveSet[i]){
+                        return false;
+                    }else{
+                        return true;
+                    }
                 }
-                return true;
             }
         },
         simonIsMad: function() {
@@ -83,10 +88,10 @@ $(document).ready(function() {
         if(simon.brain.simonKnows()){
             simon.brain.clearUser()
             setTimeout(function(){
-                simon.brain.simonSays()
-            }, 2000)
+                simon.brain.simonSays();
+            }, 1500)
         }else{
-            simon.brain.simonIsMad()
+            console.log('almost there')
         }
     });
     $('.red').on('click', function(event) {
@@ -95,10 +100,10 @@ $(document).ready(function() {
         if(simon.brain.simonKnows()){
             simon.brain.clearUser()
             setTimeout(function(){
-                simon.brain.simonSays()
-            }, 2000)
+                simon.brain.simonSays();
+            }, 1500)
         }else{
-            simon.brain.simonIsMad()
+            console.log('almost there')
         }
     });
     $('.yellow').on('click',function(event) {
@@ -107,10 +112,10 @@ $(document).ready(function() {
         if(simon.brain.simonKnows()){
             simon.brain.clearUser()
             setTimeout(function(){
-                simon.brain.simonSays()
-            }, 2000)
+                simon.brain.simonSays();
+            }, 1500)
         }else{
-            simon.brain.simonIsMad()
+            console.log('almost there')
         }
     });
     $('.blue').on('click', function(event) {
@@ -119,10 +124,10 @@ $(document).ready(function() {
         if(simon.brain.simonKnows()){
             simon.brain.clearUser()
             setTimeout(function(){
-                simon.brain.simonSays()
-            }, 2000)
+                simon.brain.simonSays();
+            }, 1500)
         }else{
-            simon.brain.simonIsMad()
+            console.log('almost there')
         }
     });
     $('.start').on('click', function(event) {
@@ -130,11 +135,3 @@ $(document).ready(function() {
         simon.brain.simonSays();
     });
 });
-
-
-//First Issue, for-loop is synchronous and setTimout is asynchronous. Sooooo our pattern is being executed at the exact same time(lights same time no pause).
-//Solved issue http://stackoverflow.com/questions/11764714/applying-delay-between-iterations-of-javascript-for-loop - Review Saturday Morning -
-
-//simonSays function works as expected. I click start to call function and it runs once. I click start again and it plays the original move followed by a second move. simonSays() is functionally correct
-
-//timeouts are working - user input does not clear at the right spot
