@@ -1,21 +1,23 @@
 <snippet>
   <content>
 # ${1:reactingToSimon}
-TODO: I built this app in jquery/vanilla js for my first WDI project. The entire app took about a day to put together. I'm now working on building it in react before Wednesday of next week to see if it's something I can implement(I want a live scoreboard, some variations, and just want to try the challenge).
+I built this app in jquery/vanilla js for my first WDI project. The entire app took about a day to put together. I'm now working on building it in react before Wednesday of next week to see if it's something I can implement(I want a live scoreboard, some variations, and just want to try the challenge).
 ## Installation
-TODO: You can find the MVP app that I put together listed here - https://chris-a-phillips.github.io/reactingToSimon/-
+You can find the MVP app that I put together listed here - https://chris-a-phillips.github.io/reactingToSimon/-
 ## Usage
-TODO: The game is SIMON! Press start and simon will tell you what button to click. Click back and Simon will repeat this patter followed by one new entry. Continue until you miss the pattern
+The game is SIMON! Press start and simon will tell you what button to click. Click back and Simon will repeat this patter followed by one new entry. Continue until you miss the pattern
 ## Contributing
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
-## History
-TODO: -User Story method below-
 
-1. xx- User Stories -xx (Stories will be marked on the Right as they have been added. They will be 0 indexed so you can see what day of the project they were added - Stories will be marked on the left as priority for Bronze, Silver, Gold MVP plan with 1 being Bronze, 2 Silver, and 3 Gold - All ones should be completed before moving on to 2's and same for 3. The commit history will reflect the stories being worked on with a similar naming convention)
+# History
+
+-User Story method below-
+
+1. - User Stories -(Stories will be marked on the Right as they have been added. They will be 0 indexed so you can see what day of the project they were added - Stories will be marked on the left as priority for Bronze, Silver, Gold MVP plan with 1 being Bronze, 2 Silver, and 3 Gold - All ones should be completed before moving on to 2's and same for 3. The commit history will reflect the stories being worked on with a similar naming convention)
 
 Right-Side              MVP-Code
 0-Friday                1-Bronze
@@ -63,9 +65,9 @@ Right-Side              MVP-Code
 -React-
 
 ## Credits
-TODO:
+
 ## License
-TODO: open source by chris-a-phillips
+open source by chris-a-phillips
 ]]></content>
   <tabTrigger>readme</tabTrigger>
 </snippet>
