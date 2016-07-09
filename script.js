@@ -5,7 +5,7 @@ var simon = {
             $('.green').css('background-color', '#1aff1a')
             setTimeout(function(){
                 $('.green').css('background-color', '#00cc00')
-            }, 200)
+            }, 400)
         }
     },
     "redButton": {
@@ -14,7 +14,7 @@ var simon = {
             $('.red').css('background-color', '#ff1a1a')
             setTimeout(function(){
                 $('.red').css('background-color', '#cc0000')
-            }, 200)
+            }, 400)
         }
     },
     "yellowButton": {
@@ -23,7 +23,7 @@ var simon = {
             $('.yellow').css('background-color', '#ffff1a')
             setTimeout(function(){
                 $('.yellow').css('background-color', '#cccc00')
-            }, 200)
+            }, 400)
         }
     },
     "blueButton": {
@@ -32,7 +32,7 @@ var simon = {
             $('.blue').css('background-color', '#1a1aff')
             setTimeout(function(){
                 $('.blue').css('background-color', '#000099')
-            }, 200)
+            }, 400)
         }
     },
     "brain": {
@@ -54,7 +54,7 @@ var simon = {
                         }else{
                             simon.blueButton.response();
                         }
-                    }, 2000 * i);
+                    }, 1500 * i);
                 }(i));
             }
         },
@@ -64,11 +64,12 @@ var simon = {
                     return false;
                 }
                 return true;
+                simon.brain.userMoveSet = []
             }
         },
         simonIsMad: function() {
-            // simon.brain.userMoveSet=[]
-            // simon.brain.simonMoveSet=[]
+            simon.brain.userMoveSet = []
+            simon.brain.simonMoveSet = []
             alert('Restart! You missed the pattern!')
         },
     }
@@ -78,33 +79,44 @@ $(document).ready(function() {
         simon.greenButton.response()
         simon.brain.userMoveSet.push(simon.greenButton.id)
         if(simon.brain.simonKnows()){
-            simon.brain.simonSays()
+            setTimeout(function(){
+                simon.brain.simonSays()
+            }, 2000)
         }else{
-            simon.brain.simonIsMad();
+            simon.brain.simonIsMad()
         }
     });
     $('.red').on('click', function(event) {
         simon.redButton.response()
         simon.brain.userMoveSet.push(simon.redButton.id)
-        console.log('here we go')
-        simon.brain.simonSays()
+        if(simon.brain.simonKnows()){
+            setTimeout(function(){
+                simon.brain.simonSays()
+            }, 2000)
+        }else{
+            simon.brain.simonIsMad()
+        }
     });
     $('.yellow').on('click',function(event) {
         simon.yellowButton.response()
         simon.brain.userMoveSet.push(simon.yellowButton.id)
         if(simon.brain.simonKnows()){
-            simon.brain.simonSays()
+            setTimeout(function(){
+                simon.brain.simonSays()
+            }, 2000)
         }else{
-            simon.brain.simonIsMad();
+            simon.brain.simonIsMad()
         }
     });
     $('.blue').on('click', function(event) {
         simon.blueButton.response()
         simon.brain.userMoveSet.push(simon.blueButton.id)
         if(simon.brain.simonKnows()){
-            simon.brain.simonSays()
+            setTimeout(function(){
+                simon.brain.simonSays()
+            }, 2000)
         }else{
-            simon.brain.simonIsMad();
+            simon.brain.simonIsMad()
         }
     });
     $('.start').on('click', function(event) {
@@ -118,3 +130,5 @@ $(document).ready(function() {
 //Solved issue http://stackoverflow.com/questions/11764714/applying-delay-between-iterations-of-javascript-for-loop - Review Saturday Morning -
 
 //simonSays function works as expected. I click start to call function and it runs once. I click start again and it plays the original move followed by a second move. simonSays() is functionally correct
+
+//we need to put a conditional on each button that they should only call simon says or push a user variable IF userMoveSet is equal to simon move set. This means we have to clear the user moveset before a user plays each time.
