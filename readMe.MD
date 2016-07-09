@@ -5,7 +5,7 @@ I built this app in jquery/vanilla js for my first WDI project. The entire app t
 ## Installation
 You can find the MVP app that I put together listed here - https://chris-a-phillips.github.io/reactingToSimon/
 ## Usage
-The game is SIMON! Press start and simon will tell you what button to click. Click back and Simon will repeat this patter followed by one new entry. Continue until you miss the pattern
+The game is SIMON! Press start and simon will tell you what button to click. Click back and Simon will repeat this pattern followed by one new entry. Continue until you miss the pattern
 ## Contributing
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
