@@ -33,11 +33,12 @@ The game is SIMON! Press start and simon will tell you what button to click. Cli
 
 
 
-<h2>-Functionality-</h2>
-    <ul>
-        <li>0 As a user, I want the Simon game to respond when I tell it to start, so that I know it accepted my start command(buttons lit etc) - 2</li>
-        <li>0 As a user, I want to be able to pick between classic Simon, which does not speed up the input, and advanced simon, which does speed up the input, so that there is variation in the game for advanced users - 3</li>
-    </ul>
+-Functionality-
+
+0 As a user, I want the Simon game to respond when I tell it to start, so that I know it accepted my start command(buttons lit etc) - 2<
+
+0 As a user, I want to be able to pick between classic Simon, which does not speed up the input, and advanced simon, which does speed up the input, so that there is variation in the game for advanced users - 3
+
 
 3. -Design-
 0 As a user, I want there to be a welcome screen that links to the main game, so that I can control when I go to the game - 2
