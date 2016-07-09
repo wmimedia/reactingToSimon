@@ -64,7 +64,6 @@ var simon = {
                     return false;
                 }
                 return true;
-                simon.brain.userMoveSet = []
             }
         },
         simonIsMad: function() {
@@ -72,6 +71,9 @@ var simon = {
             simon.brain.simonMoveSet = []
             alert('Restart! You missed the pattern!')
         },
+        clearUser: function() {
+            simon.brain.userMoveSet = []
+        }
     }
 }
 $(document).ready(function() {
@@ -79,6 +81,7 @@ $(document).ready(function() {
         simon.greenButton.response()
         simon.brain.userMoveSet.push(simon.greenButton.id)
         if(simon.brain.simonKnows()){
+            simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays()
             }, 2000)
@@ -90,6 +93,7 @@ $(document).ready(function() {
         simon.redButton.response()
         simon.brain.userMoveSet.push(simon.redButton.id)
         if(simon.brain.simonKnows()){
+            simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays()
             }, 2000)
@@ -101,6 +105,7 @@ $(document).ready(function() {
         simon.yellowButton.response()
         simon.brain.userMoveSet.push(simon.yellowButton.id)
         if(simon.brain.simonKnows()){
+            simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays()
             }, 2000)
@@ -112,6 +117,7 @@ $(document).ready(function() {
         simon.blueButton.response()
         simon.brain.userMoveSet.push(simon.blueButton.id)
         if(simon.brain.simonKnows()){
+            simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays()
             }, 2000)
@@ -131,4 +137,4 @@ $(document).ready(function() {
 
 //simonSays function works as expected. I click start to call function and it runs once. I click start again and it plays the original move followed by a second move. simonSays() is functionally correct
 
-//we need to put a conditional on each button that they should only call simon says or push a user variable IF userMoveSet is equal to simon move set. This means we have to clear the user moveset before a user plays each time.
+//timeouts are working - user input does not clear at the right spot
