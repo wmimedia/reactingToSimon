@@ -2,25 +2,37 @@ var simon = {
     "greenButton": {
         "id": 1,
         response: function(){
-            
+            $('.green').css('background-color', '#1aff1a')
+            setTimeout(function(){
+                $('.green').css('background-color', '#00cc00')
+            }, 1000)
         }
     },
     "redbutton": {
         "id": 2,
         response: function(){
-            console.log('iworkred')
+            $('.red').css('background-color', '#ff1a1a')
+            setTimeout(function(){
+                $('.green').css('background-color', '#cc0000')
+            }, 1000)
         }
     },
     "yellowButton": {
         "id": 3,
         response: function(){
-            console.log('iworkyellow')
+            $('.yellow').css('background-color', '#ffff1a')
+            setTimeout(function(){
+                $('.green').css('background-color', '#cccc00')
+            }, 1000)
         }
     },
     "blueButton": {
         "id": 4,
         response: function(){
-            console.log('iworkblue')
+            $('.blue').css('background-color', '#1a1aff')
+            setTimeout(function(){
+                $('.green').css('background-color', '#000099')
+            }, 1000)
         }
     },
     "brain": {
@@ -44,19 +56,12 @@ var simon = {
                         simon.blueButton.response();
                         break;
                 }
-
             }
-
-        },
-
+        }
     }
 }
 
-
-
-
-
 $(document).ready(function() {
-    console.log('iwork')
+    
 
 });
