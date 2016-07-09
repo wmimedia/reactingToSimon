@@ -42,16 +42,6 @@ var simon = {
     "brain": {
         "userMoveSet":[],
         "simonMoveSet":[],
-        "simonChecks": {
-            counter:[],
-            verify: function(){
-                if(simon.brain.userMoveSet[counter] !== simon.brain.simonMoveSet[counter]){
-                    return false;
-                }else{
-                    return true;
-                }
-            }
-        },
         simonSays: function(){
             var theMove = Math.floor(Math.random() * (4 - 1)) + 1;
             simon.brain.simonMoveSet.push(theMove)
@@ -72,6 +62,14 @@ var simon = {
                 }(i));
             }
         },
+        simonChecks: function(){
+            var counter = (simon.brain.simonMoveSet.length) - 1
+            if(simon.brain.userMoveSet[counter] !== simon.brain.simonMoveSet[counter]){
+                return false;
+            }else{
+                return true;
+            }
+        },
         simonIsMad: function() {
             simon.brain.userMoveSet = []
             simon.brain.simonMoveSet = []
@@ -86,38 +84,50 @@ $(document).ready(function() {
     $('.green').on('click', function(event) {
         simon.greenButton.response()
         simon.brain.userMoveSet.push(simon.greenButton.id)
-        //if(runsimonchecks verify else simonIsMad)
-        simon.brain.clearUser()
-        setTimeout(function(){
-            simon.brain.simonSays();
-        }, 1100)
+        if(simon.brain.simonChecks()){
+            simon.brain.clearUser()
+            setTimeout(function(){
+                simon.brain.simonSays();
+            }, 1100)
+        }else{
+            simon.brain.simonIsMad()
+        }
     });
     $('.red').on('click', function(event) {
         simon.redButton.response()
         simon.brain.userMoveSet.push(simon.redButton.id)
-        //if(runsimonchecks verify else simonIsMad)
-        simon.brain.clearUser()
-        setTimeout(function(){
-            simon.brain.simonSays();
-        }, 1100)
+        if(simon.brain.simonChecks()){
+            simon.brain.clearUser()
+            setTimeout(function(){
+                simon.brain.simonSays();
+            }, 1100)
+        }else{
+            simon.brain.simonIsMad()
+        }
     });
     $('.yellow').on('click',function(event) {
         simon.yellowButton.response()
         simon.brain.userMoveSet.push(simon.yellowButton.id)
-        //if(runsimonchecks verify else simonIsMad)
-        simon.brain.clearUser()
-        setTimeout(function(){
-            simon.brain.simonSays();
-        }, 1100)
+        if(simon.brain.simonChecks()){
+            simon.brain.clearUser()
+            setTimeout(function(){
+                simon.brain.simonSays();
+            }, 1100)
+        }else{
+            simon.brain.simonIsMad()
+        }
     });
     $('.blue').on('click', function(event) {
         simon.blueButton.response()
         simon.brain.userMoveSet.push(simon.blueButton.id)
-        //if(runsimonchecks verify else simonIsMad)
-        simon.brain.clearUser()
-        setTimeout(function(){
-            simon.brain.simonSays();
-        }, 1100)
+        if(simon.brain.simonChecks()){
+            simon.brain.clearUser()
+            setTimeout(function(){
+                simon.brain.simonSays();
+            }, 1100)
+        }else{
+            simon.brain.simonIsMad()
+        }
     });
     $('.start').on('click', function(event) {
         event.preventDefault();
