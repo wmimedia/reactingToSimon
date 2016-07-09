@@ -66,12 +66,15 @@ var simon = {
             if(simon.brain.userMoveSet.length !== simon.brain.simonMoveSet.length){
                 return false;
             }else{
-                for(i=0;i<simon.brain.userMoveSet.length;i++){
-                    if(simon.brain.userMoveSet[i] !== simon.brain.simonMoveSet[i]){
-                        return false;
-                    }else{
-                        return true;
-                    }
+                return true;
+            }
+        },
+        simonChecks: function(){
+            for(i=0;i<simon.brain.simonMoveSet.length;i++){
+                if(simon.brain.userMoveSet[i] !== simon.brain.simonMoveSet[i]){
+                    return false;
+                }else{
+                    return true;
                 }
             }
         },
@@ -89,53 +92,57 @@ $(document).ready(function() {
     $('.green').on('click', function(event) {
         simon.greenButton.response()
         simon.brain.userMoveSet.push(simon.greenButton.id)
-        if(simon.brain.simonKnows()){
-            console.log('youdidit')
+        if(simon.brain.simonKnows() && simon.brain.simonChecks()){
             simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays();
             }, 1500)
+        }else if(!simon.brain.simonKnows()){
+            console.log('keep going')
         }else{
-            console.log('almost there')
+            simon.brain.simonIsMad()
         }
     });
     $('.red').on('click', function(event) {
         simon.redButton.response()
         simon.brain.userMoveSet.push(simon.redButton.id)
-        if(simon.brain.simonKnows()){
-            console.log('youdidit')
+        if(simon.brain.simonKnows() && simon.brain.simonChecks()){
             simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays();
             }, 1500)
+        }else if(!simon.brain.simonKnows()){
+            console.log('keep going')
         }else{
-            console.log('almost there')
+            simon.brain.simonIsMad()
         }
     });
     $('.yellow').on('click',function(event) {
         simon.yellowButton.response()
         simon.brain.userMoveSet.push(simon.yellowButton.id)
-        if(simon.brain.simonKnows()){
-            console.log('youdidit')
+        if(simon.brain.simonKnows() && simon.brain.simonChecks()){
             simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays();
             }, 1500)
+        }else if(!simon.brain.simonKnows()){
+            console.log('keep going')
         }else{
-            console.log('almost there')
+            simon.brain.simonIsMad()
         }
     });
     $('.blue').on('click', function(event) {
         simon.blueButton.response()
         simon.brain.userMoveSet.push(simon.blueButton.id)
-        if(simon.brain.simonKnows()){
-            console.log('youdidit')
+        if(simon.brain.simonKnows() && simon.brain.simonChecks()){
             simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays();
             }, 1500)
+        }else if(!simon.brain.simonKnows()){
+            console.log('keep going')
         }else{
-            console.log('almost there')
+            simon.brain.simonIsMad()
         }
     });
     $('.start').on('click', function(event) {
@@ -143,3 +150,9 @@ $(document).ready(function() {
         simon.brain.simonSays();
     });
 });
+//Verified simon knows works need to see why it's not being called
+//not actually calling simonIsMad within the if statment so there is no stop
+//be creative and figure out where to call it
+//might have to include elseif logic within dom ready
+//pretty sure green button has the right logic now
+//Logic is still wrong but closer will have a go at it tomorrow morning.
