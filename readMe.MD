@@ -35,25 +35,35 @@ The game is SIMON! Press start and simon will tell you what button to click. Cli
 
 -Functionality-
 
-0 As a user, I want the Simon game to respond when I tell it to start, so that I know it accepted my start command(buttons lit etc) - 2<
+0 As a user, I want the Simon game to respond when I tell it to start, so that I know it accepted my start command(buttons lit etc) - 2
 
 0 As a user, I want to be able to pick between classic Simon, which does not speed up the input, and advanced simon, which does speed up the input, so that there is variation in the game for advanced users - 3
 
 
-3. -Design-
+-Design-
+
 0 As a user, I want there to be a welcome screen that links to the main game, so that I can control when I go to the game - 2
+
 0 As a user, I want there to be a scoreboard, so that I can be competitive with the people I'm playing with - 3
+
 0 As a user, I want my website to be responsive, so that I can access it and have it look good anywhere - 3
 
 
-4. -Complete-
-0 As a user, I want the Simon game to Start when I tell it to so that I am prepared to play - 1 COMPLETE July8**
-0 As a user, I want the Simon game to prompt me with the button I should press, so that I know which one to press to continue the game - 1 COMPLETE July 8**
-0 As a user, I want the Simon game to add one button to press after each stage, so that there is progression. - 1 COMPLETE July 8/9**
-0 As a user, I want to be able to play classic Simon with no speed variance, so that it is accessible to the most casual of fans - 1 COMPLETE JULY 8**
-0 As a user, I want there to be 4 unique sounds for each button, so that the game provides auditory as well as visual feedback - 1 COMPLETE July 8**
-0 As a user, I want the buttons to light up when I click them, so that there is visual feedback - 1 COMPLETE July 8**
-0 As a user, I want the Simon game to tell me when I'm wrong, so that the game can reset- 1 COMPLETE JULY 9**
+-Complete-
+
+0 As a user, I want the Simon game to Start when I tell it to so that I am prepared to play - 1 COMPLETE July8
+
+0 As a user, I want the Simon game to prompt me with the button I should press, so that I know which one to press to continue the game - 1 COMPLETE July 8
+
+0 As a user, I want the Simon game to add one button to press after each stage, so that there is progression. - 1 COMPLETE July 8
+
+0 As a user, I want to be able to play classic Simon with no speed variance, so that it is accessible to the most casual of fans - 1 COMPLETE JULY 8
+
+0 As a user, I want there to be 4 unique sounds for each button, so that the game provides auditory as well as visual feedback - 1 COMPLETE July 8
+
+0 As a user, I want the buttons to light up when I click them, so that there is visual feedback - 1 COMPLETE July 8
+
+0 As a user, I want the Simon game to tell me when I'm wrong, so that the game can reset- 1 COMPLETE JULY 9
 
 
 5. xx- MVP(Minimum Viable Product) PLAN -xx
