@@ -3,7 +3,7 @@
 # ${1:reactingToSimon}
 I built this app in jquery/vanilla js for my first WDI project. The entire app took about a day to put together. I'm now working on building it in react before Wednesday of next week to see if it's something I can implement(I want a live scoreboard, some variations, and just want to try the challenge).
 ## Installation
-You can find the MVP app that I put together listed here - https://chris-a-phillips.github.io/reactingToSimon/-
+You can find the MVP app that I put together listed here - https://chris-a-phillips.github.io/reactingToSimon/
 ## Usage
 The game is SIMON! Press start and simon will tell you what button to click. Click back and Simon will repeat this patter followed by one new entry. Continue until you miss the pattern
 ## Contributing
