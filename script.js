@@ -6,7 +6,7 @@ var simon = {
             $('.green').css('background-color', '#1aff1a')
             setTimeout(function(){
                 $('.green').css('background-color', '#00cc00')
-            }, 400)
+            }, 200)
         }
     },
     "redButton": {
@@ -16,7 +16,7 @@ var simon = {
             $('.red').css('background-color', '#ff1a1a')
             setTimeout(function(){
                 $('.red').css('background-color', '#cc0000')
-            }, 400)
+            }, 200)
         }
     },
     "yellowButton": {
@@ -26,7 +26,7 @@ var simon = {
             $('.yellow').css('background-color', '#ffff1a')
             setTimeout(function(){
                 $('.yellow').css('background-color', '#cccc00')
-            }, 400)
+            }, 200)
         }
     },
     "blueButton": {
@@ -36,7 +36,7 @@ var simon = {
             $('.blue').css('background-color', '#1a1aff')
             setTimeout(function(){
                 $('.blue').css('background-color', '#000099')
-            }, 400)
+            }, 200)
         }
     },
     "brain": {
@@ -58,7 +58,7 @@ var simon = {
                         }else{
                             simon.blueButton.response();
                         }
-                    }, 1000 * i);
+                    }, 1500 * i);
                 }(i));
             }
         },
@@ -150,9 +150,5 @@ $(document).ready(function() {
     });
 });
 
-//logic still fucked a bit. also simonsays is being called again for some reason even after simonIsMad is called.
-
-
-
-
-//keepgoing is triggered, but because true has not been evaluated simon is mad is called. we need to break it down so that we're returning mad simon on the counter, but allowing the user to keep playing if the lengths are not the correct size
+//sorten the sound files in audacity so that there play clears out quickly and can be played even when a button is double clicked
+//make it so that you can interact with the buttons seperatly of the logic being called probably by putting a conditional at the start of the click handelers checking for a computer move set length

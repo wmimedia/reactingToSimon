@@ -1,0 +1,64 @@
+I built this app in jquery/vanilla js for my first WDI project
+I'm working now on building it in react before Wednesday of next week to see if it's something I can implement
+
+-Steps taken from the project page-
+1) Break the project down into different components (data, presentation, views, style, DOM manipulation) and brainstorm each component individually. Use whiteboards!
+
+2) Use your Development Tools (console.log, inspector, alert statements, etc) to debug and solve problems
+    Work through the lessons in class & ask questions when you need to! Think about adding relevant code to your game each night, instead of, you know... procrastinating.
+
+3) Commit early, commit often. Don’t be afraid to break something because you can always go back in time to a previous version.
+
+4) Consult documentation resources (MDN, jQuery, etc.) at home to better understand what you’ll be getting into.
+
+5) Don’t be afraid to write code that you know you will have to remove later. Create temporary elements (buttons, links, etc) that trigger events if real data is not available. For example, if          you’re trying to figure out how to change some text when the game is over but you haven’t solved the win/lose game logic, you can create a button to simulate that until then.
+
+
+-User Story method below-
+
+xx- User Stories -xx (Stories will be marked on the Right as they have been added. They will be 0 indexed so you can see what day of the project they were added - Stories will be marked on the left as priority for Bronze, Silver, Gold MVP plan with 1 being Bronze, 2 Silver, and 3 Gold - All ones should be completed before moving on to 2's and same for 3. The commit history will reflect the stories being worked on with a similar naming convention)
+
+Right-Side              MVP-Code
+0-Friday                1-Bronze
+1-Saturday              2-Silver
+2-Sunday                3-Gold
+3-Monday
+4-Tuesday
+5-Wednesday
+
+
+-Functionality-
+0 As a user, I want the Simon game to respond when I tell it to start, so that I know it accepted my start command(buttons lit etc) - 2
+0 As a user, I want to be able to pick between classic Simon, which does not speed up the input, and advanced simon, which does speed up the input, so that there is variation in the game for advanced users - 3
+
+-Design-
+0 As a user, I want there to be a welcome screen that links to the main game, so that I can control when I go to the game - 2
+0 As a user, I want there to be a scoreboard, so that I can be competitive with the people I'm playing with - 3
+0 As a user, I want my website to be responsive, so that I can access it and have it look good anywhere - 3
+
+
+-Complete-
+0 As a user, I want the Simon game to Start when I tell it to so that I am prepared to play - 1 COMPLETE July8**
+0 As a user, I want the Simon game to prompt me with the button I should press, so that I know which one to press to continue the game - 1 COMPLETE July 8**
+0 As a user, I want the Simon game to add one button to press after each stage, so that there is progression. - 1 COMPLETE July 8/9**
+0 As a user, I want to be able to play classic Simon with no speed variance, so that it is accessible to the most casual of fans - 1 COMPLETE JULY 8**
+0 As a user, I want there to be 4 unique sounds for each button, so that the game provides auditory as well as visual feedback - 1 COMPLETE July 8**
+0 As a user, I want the buttons to light up when I click them, so that there is visual feedback - 1 COMPLETE July 8**
+0 As a user, I want the Simon game to tell me when I'm wrong, so that the game can reset- 1 COMPLETE JULY 9**
+
+
+xx- MVP(Minimum Viable Product) PLAN -xx
+-Bronze- COMPLETE July 9
+
+-page renders Simon Game on load from a GH-Pages WebSite-
+-Simon Game functions in accordance with all user stories labeled at the bronze level
+-project workflow is consistent with parameters set forth on Friday
+-code is readable and refactored to meet presentation requirement
+
+-Silver-
+-All Bronze level criteria has been met
+-Simon Game functions in accordance with all user stories labeled at the bronze & silver level
+
+
+-Gold-
+-React-
