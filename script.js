@@ -56,26 +56,58 @@ var simon = {
                     }, 1000 * i);
                 }(i));
             }
-        }
+        },
+        simonKnows: function(userMoveSet,simonMoveSet){
+            for(i=0;i<simon.brain.userMoveSet.length;i++){
+                if(simon.brain.userMoveSet[i] !== simon.brain.simonMoveSet[i]){
+                    return false;
+                }
+                return true;
+            }
+        },
+        simonIsMad: function() {
+            simon.brain.userMoveSet=[]
+            simon.brain.simonMoveSet=[]
+            alert('Restart! You missed the pattern!')
+        },
     }
 }
 $(document).ready(function() {
     $('.green').on('click', function(event) {
         simon.greenButton.response()
         simon.brain.userMoveSet.push(simon.greenButton.id)
-
+        if(simon.brain.simonKnows()){
+            simon.brain.simonSays()
+        }else{
+            simon.brain.simonIsMad();
+        }
     });
     $('.red').on('click', function(event) {
         simon.redButton.response()
         simon.brain.userMoveSet.push(simon.redButton.id)
+        if(simon.brain.simonKnows()){
+            simon.brain.simonSays()
+        }else{
+            simon.brain.simonIsMad();
+        }
     });
     $('.yellow').on('click',function(event) {
         simon.yellowButton.response()
         simon.brain.userMoveSet.push(simon.yellowButton.id)
+        if(simon.brain.simonKnows()){
+            simon.brain.simonSays()
+        }else{
+            simon.brain.simonIsMad();
+        }
     });
     $('.blue').on('click', function(event) {
         simon.blueButton.response()
         simon.brain.userMoveSet.push(simon.blueButton.id)
+        if(simon.brain.simonKnows()){
+            simon.brain.simonSays()
+        }else{
+            simon.brain.simonIsMad();
+        }
     });
     $('.start').on('click', function(event) {
         event.preventDefault();
@@ -85,4 +117,4 @@ $(document).ready(function() {
 
 
 //First Issue, for-loop is synchronous and setTimout is asynchronous. Sooooo our pattern is being executed at the exact same time(lights same time no pause).
-//Solved issue http://stackoverflow.com/questions/11764714/applying-delay-between-iterations-of-javascript-for-loop - Review Saturday Morning - Very cool
+//Solved issue http://stackoverflow.com/questions/11764714/applying-delay-between-iterations-of-javascript-for-loop - Review Saturday Morning -
