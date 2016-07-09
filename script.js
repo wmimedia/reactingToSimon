@@ -89,59 +89,75 @@ var simon = {
 }
 $(document).ready(function() {
     $('.green').on('click', function(event) {
-        simon.greenButton.response()
-        simon.brain.userMoveSet.push(simon.greenButton.id)
-        if(simon.brain.simonChecksMoves() && simon.brain.simonChecksLength()){
-            simon.brain.clearUser()
-            setTimeout(function(){
-                simon.brain.simonSays();
-            }, 1100)
-        }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
-            console.log('keepgoing')
+        if (simon.brain.simonMoveSet.length != 0){
+            simon.greenButton.response()
+            simon.brain.userMoveSet.push(simon.greenButton.id)
+            if(simon.brain.simonChecksMoves() && simon.brain.simonChecksLength()){
+                simon.brain.clearUser()
+                setTimeout(function(){
+                    simon.brain.simonSays();
+                }, 1100)
+            }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
+                console.log('keepgoing')
+            }else{
+                simon.brain.simonIsMad()
+            }
         }else{
-            simon.brain.simonIsMad()
+            simon.greenButton.response()
         }
     });
     $('.red').on('click', function(event) {
-        simon.redButton.response()
-        simon.brain.userMoveSet.push(simon.redButton.id)
-        if(simon.brain.simonChecksMoves() && simon.brain.simonChecksLength()){
-            simon.brain.clearUser()
-            setTimeout(function(){
-                simon.brain.simonSays();
-            }, 1100)
-        }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
-            console.log('keepgoing')
+        if(simon.brain.simonMoveSet.length != 0){
+            simon.redButton.response()
+            simon.brain.userMoveSet.push(simon.redButton.id)
+            if(simon.brain.simonChecksMoves() && simon.brain.simonChecksLength()){
+                simon.brain.clearUser()
+                setTimeout(function(){
+                    simon.brain.simonSays();
+                }, 1100)
+            }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
+                console.log('keepgoing')
+            }else{
+                simon.brain.simonIsMad()
+            }
         }else{
-            simon.brain.simonIsMad()
+            simon.redButton.response()
         }
     });
     $('.yellow').on('click',function(event) {
-        simon.yellowButton.response()
-        simon.brain.userMoveSet.push(simon.yellowButton.id)
-        if(simon.brain.simonChecksMoves() && simon.brain.simonChecksLength()){
-            simon.brain.clearUser()
-            setTimeout(function(){
-                simon.brain.simonSays();
-            }, 1100)
-        }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
-            console.log('keepgoing')
+        if(simon.brain.simonMoveSet.length != 0){
+            simon.yellowButton.response()
+            simon.brain.userMoveSet.push(simon.yellowButton.id)
+            if(simon.brain.simonChecksMoves() && simon.brain.simonChecksLength()){
+                simon.brain.clearUser()
+                setTimeout(function(){
+                    simon.brain.simonSays();
+                }, 1100)
+            }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
+                console.log('keepgoing')
+            }else{
+                simon.brain.simonIsMad()
+            }
         }else{
-            simon.brain.simonIsMad()
+            simon.yellowButton.response()
         }
     });
     $('.blue').on('click', function(event) {
-        simon.blueButton.response()
-        simon.brain.userMoveSet.push(simon.blueButton.id)
-        if(simon.brain.simonChecksMoves() && simon.brain.simonChecksLength()){
-            simon.brain.clearUser()
-            setTimeout(function(){
-                simon.brain.simonSays();
-            }, 1100)
-        }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
-            console.log('keepgoing')
+        if(simon.brain.simonMoveSet.length != 0){
+            simon.blueButton.response()
+            simon.brain.userMoveSet.push(simon.blueButton.id)
+            if(simon.brain.simonChecksMoves() && simon.brain.simonChecksLength()){
+                simon.brain.clearUser()
+                setTimeout(function(){
+                    simon.brain.simonSays();
+                }, 1100)
+            }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
+                console.log('keepgoing')
+            }else{
+                simon.brain.simonIsMad()
+            }
         }else{
-            simon.brain.simonIsMad()
+            simon.blueButton.response()
         }
     });
     $('.start').on('click', function(event) {
@@ -151,3 +167,6 @@ $(document).ready(function() {
 });
 
 //make it so that you can interact with the buttons seperatly of the logic being called probably by putting a conditional at the start of the click handelers checking for a computer move set length
+
+//shorten green button sound more
+//shorten yellow button more
