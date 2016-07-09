@@ -62,12 +62,19 @@ var simon = {
                 }(i));
             }
         },
-        simonChecks: function(){
+        simonChecksMoves: function(){
             var counter = (simon.brain.userMoveSet.length) - 1
-            if(simon.brain.userMoveSet[counter] !== simon.brain.simonMoveSet[counter]){
-                return false;
-            }else{
+            if(simon.brain.userMoveSet[counter] == simon.brain.simonMoveSet[counter]){
                 return true;
+            }else{
+                return false;
+            }
+        },
+        simonChecksLength: function(){
+            if(simon.brain.userMoveSet.length == simon.brain.simonMoveSet.length) {
+                return true
+            }else{
+                return false
             }
         },
         simonIsMad: function() {
@@ -84,11 +91,13 @@ $(document).ready(function() {
     $('.green').on('click', function(event) {
         simon.greenButton.response()
         simon.brain.userMoveSet.push(simon.greenButton.id)
-        if(simon.brain.simonChecks()){
+        if(simon.brain.simonChecksMoves() && simon.brain.simonChecksLength()){
             simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays();
             }, 1100)
+        }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
+            console.log('keepgoing')
         }else{
             simon.brain.simonIsMad()
         }
@@ -96,11 +105,13 @@ $(document).ready(function() {
     $('.red').on('click', function(event) {
         simon.redButton.response()
         simon.brain.userMoveSet.push(simon.redButton.id)
-        if(simon.brain.simonChecks()){
+        if(simon.brain.simonChecksMoves() && simon.brain.simonChecksLength()){
             simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays();
             }, 1100)
+        }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
+            console.log('keepgoing')
         }else{
             simon.brain.simonIsMad()
         }
@@ -108,11 +119,13 @@ $(document).ready(function() {
     $('.yellow').on('click',function(event) {
         simon.yellowButton.response()
         simon.brain.userMoveSet.push(simon.yellowButton.id)
-        if(simon.brain.simonChecks()){
+        if(simon.brain.simonChecksMoves() && simon.brain.simonChecksLength()){
             simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays();
             }, 1100)
+        }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
+            console.log('keepgoing')
         }else{
             simon.brain.simonIsMad()
         }
@@ -120,11 +133,13 @@ $(document).ready(function() {
     $('.blue').on('click', function(event) {
         simon.blueButton.response()
         simon.brain.userMoveSet.push(simon.blueButton.id)
-        if(simon.brain.simonChecks()){
+        if(simon.brain.simonChecksMoves() && simon.brain.simonChecksLength()){
             simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays();
             }, 1100)
+        }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
+            console.log('keepgoing')
         }else{
             simon.brain.simonIsMad()
         }
@@ -134,19 +149,10 @@ $(document).ready(function() {
         simon.brain.simonSays();
     });
 });
-//Verified simon knows works need to see why it's not being called
-//not actually calling simonIsMad within the if statment so there is no stop
-//be creative and figure out where to call it
-//might have to include elseif logic within dom ready
-//pretty sure green button has the right logic now
-//Logic is still wrong but closer will have a go at it tomorrow morning.
+
+//logic still fucked a bit. also simonsays is being called again for some reason even after simonIsMad is called.
 
 
-//Another bug comes when you're inaccurate. Even if you miss a key, if the user array length doesnt match simon length  yet you get a pass and consolelog tells you to keep going
-//simon checks is also bugged because it only returns a boolean for the last itteration of the for loop
 
 
-/*******--------> THIS MOTHER FUCKING ONE possible logic solution - make a counter var that increments whenever (rgby) are clicked. take that counter variable(first would be 0)  and use it as the position to check userMovesSet and simonMoveSet. This way we can run a check for equality on every click!!*/
-//need dynamically updated index to check against
-
-//on clikc we push the value to the user array and then check the positions
+//keepgoing is triggered, but because true has not been evaluated simon is mad is called. we need to break it down so that we're returning mad simon on the counter, but allowing the user to keep playing if the lengths are not the correct size
