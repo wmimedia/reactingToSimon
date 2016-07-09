@@ -5,16 +5,16 @@ var simon = {
             $('.green').css('background-color', '#1aff1a')
             setTimeout(function(){
                 $('.green').css('background-color', '#00cc00')
-            }, 1000)
+            }, 500)
         }
     },
-    "redbutton": {
+    "redButton": {
         "id": 2,
         response: function(){
             $('.red').css('background-color', '#ff1a1a')
             setTimeout(function(){
-                $('.green').css('background-color', '#cc0000')
-            }, 1000)
+                $('.red').css('background-color', '#cc0000')
+            }, 500)
         }
     },
     "yellowButton": {
@@ -22,8 +22,8 @@ var simon = {
         response: function(){
             $('.yellow').css('background-color', '#ffff1a')
             setTimeout(function(){
-                $('.green').css('background-color', '#cccc00')
-            }, 1000)
+                $('.yellow').css('background-color', '#cccc00')
+            }, 500)
         }
     },
     "blueButton": {
@@ -31,8 +31,8 @@ var simon = {
         response: function(){
             $('.blue').css('background-color', '#1a1aff')
             setTimeout(function(){
-                $('.green').css('background-color', '#000099')
-            }, 1000)
+                $('.blue').css('background-color', '#000099')
+            }, 500)
         }
     },
     "brain": {
@@ -60,8 +60,18 @@ var simon = {
         }
     }
 }
-
 $(document).ready(function() {
-    
+    $('.green').on('click', function(event) {
+        simon.greenButton.response()
+    });
+    $('.red').on('click', function(event) {
+        simon.redButton.response()
+    });
+    $('.yellow').on('click',function(event) {
+        simon.yellowButton.response()
+    });
+    $('.blue').on('click', function(event) {
+        simon.blueButton.response();
+    });
 
 });
