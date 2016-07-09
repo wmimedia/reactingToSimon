@@ -63,7 +63,7 @@ var simon = {
             }
         },
         simonChecks: function(){
-            var counter = (simon.brain.simonMoveSet.length) - 1
+            var counter = (simon.brain.userMoveSet.length) - 1
             if(simon.brain.userMoveSet[counter] !== simon.brain.simonMoveSet[counter]){
                 return false;
             }else{
@@ -145,6 +145,8 @@ $(document).ready(function() {
 //Another bug comes when you're inaccurate. Even if you miss a key, if the user array length doesnt match simon length  yet you get a pass and consolelog tells you to keep going
 //simon checks is also bugged because it only returns a boolean for the last itteration of the for loop
 
-//to do tomorrow - resolve the two bugs listed above and fix the logic for checking against the simon moveset =) You got this! Good First Days Work!
 
 /*******--------> THIS MOTHER FUCKING ONE possible logic solution - make a counter var that increments whenever (rgby) are clicked. take that counter variable(first would be 0)  and use it as the position to check userMovesSet and simonMoveSet. This way we can run a check for equality on every click!!*/
+//need dynamically updated index to check against
+
+//on clikc we push the value to the user array and then check the positions
