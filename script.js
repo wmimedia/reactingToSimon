@@ -42,6 +42,16 @@ var simon = {
     "brain": {
         "userMoveSet":[],
         "simonMoveSet":[],
+        "simonChecks": {
+            counter:[],
+            verify: function(){
+                if(simon.brain.userMoveSet[counter] !== simon.brain.simonMoveSet[counter]){
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        },
         simonSays: function(){
             var theMove = Math.floor(Math.random() * (4 - 1)) + 1;
             simon.brain.simonMoveSet.push(theMove)
@@ -62,22 +72,6 @@ var simon = {
                 }(i));
             }
         },
-        simonKnows: function(){
-            if(simon.brain.userMoveSet.length !== simon.brain.simonMoveSet.length){
-                return false;
-            }else{
-                return true;
-            }
-        },
-        simonChecks: function(){
-            for(i=0;i<simon.brain.simonMoveSet.length;i++){
-                if(simon.brain.userMoveSet[i] !== simon.brain.simonMoveSet[i]){
-                    return false;
-                }else{
-                    return true;
-                }
-            }
-        },
         simonIsMad: function() {
             simon.brain.userMoveSet = []
             simon.brain.simonMoveSet = []
@@ -92,58 +86,38 @@ $(document).ready(function() {
     $('.green').on('click', function(event) {
         simon.greenButton.response()
         simon.brain.userMoveSet.push(simon.greenButton.id)
-        if(simon.brain.simonKnows() && simon.brain.simonChecks()){
-            simon.brain.clearUser()
-            setTimeout(function(){
-                simon.brain.simonSays();
-            }, 1500)
-        }else if(!simon.brain.simonKnows()){
-            console.log('keep going')
-        }else{
-            simon.brain.simonIsMad()
-        }
+        //if(runsimonchecks verify else simonIsMad)
+        simon.brain.clearUser()
+        setTimeout(function(){
+            simon.brain.simonSays();
+        }, 1100)
     });
     $('.red').on('click', function(event) {
         simon.redButton.response()
         simon.brain.userMoveSet.push(simon.redButton.id)
-        if(simon.brain.simonKnows() && simon.brain.simonChecks()){
-            simon.brain.clearUser()
-            setTimeout(function(){
-                simon.brain.simonSays();
-            }, 1500)
-        }else if(!simon.brain.simonKnows()){
-            console.log('keep going')
-        }else{
-            simon.brain.simonIsMad()
-        }
+        //if(runsimonchecks verify else simonIsMad)
+        simon.brain.clearUser()
+        setTimeout(function(){
+            simon.brain.simonSays();
+        }, 1100)
     });
     $('.yellow').on('click',function(event) {
         simon.yellowButton.response()
         simon.brain.userMoveSet.push(simon.yellowButton.id)
-        if(simon.brain.simonKnows() && simon.brain.simonChecks()){
-            simon.brain.clearUser()
-            setTimeout(function(){
-                simon.brain.simonSays();
-            }, 1500)
-        }else if(!simon.brain.simonKnows()){
-            console.log('keep going')
-        }else{
-            simon.brain.simonIsMad()
-        }
+        //if(runsimonchecks verify else simonIsMad)
+        simon.brain.clearUser()
+        setTimeout(function(){
+            simon.brain.simonSays();
+        }, 1100)
     });
     $('.blue').on('click', function(event) {
         simon.blueButton.response()
         simon.brain.userMoveSet.push(simon.blueButton.id)
-        if(simon.brain.simonKnows() && simon.brain.simonChecks()){
-            simon.brain.clearUser()
-            setTimeout(function(){
-                simon.brain.simonSays();
-            }, 1500)
-        }else if(!simon.brain.simonKnows()){
-            console.log('keep going')
-        }else{
-            simon.brain.simonIsMad()
-        }
+        //if(runsimonchecks verify else simonIsMad)
+        simon.brain.clearUser()
+        setTimeout(function(){
+            simon.brain.simonSays();
+        }, 1100)
     });
     $('.start').on('click', function(event) {
         event.preventDefault();
@@ -156,3 +130,11 @@ $(document).ready(function() {
 //might have to include elseif logic within dom ready
 //pretty sure green button has the right logic now
 //Logic is still wrong but closer will have a go at it tomorrow morning.
+
+
+//Another bug comes when you're inaccurate. Even if you miss a key, if the user array length doesnt match simon length  yet you get a pass and consolelog tells you to keep going
+//simon checks is also bugged because it only returns a boolean for the last itteration of the for loop
+
+//to do tomorrow - resolve the two bugs listed above and fix the logic for checking against the simon moveset =) You got this! Good First Days Work!
+
+/*******--------> THIS MOTHER FUCKING ONE possible logic solution - make a counter var that increments whenever (rgby) are clicked. take that counter variable(first would be 0)  and use it as the position to check userMovesSet and simonMoveSet. This way we can run a check for equality on every click!!*/
