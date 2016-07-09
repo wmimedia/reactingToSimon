@@ -2,6 +2,7 @@ var simon = {
     "greenButton": {
         "id": 0,
         response: function(){
+            $('#soundGreen')[0].play();
             $('.green').css('background-color', '#1aff1a')
             setTimeout(function(){
                 $('.green').css('background-color', '#00cc00')
@@ -11,6 +12,7 @@ var simon = {
     "redButton": {
         "id": 1,
         response: function(){
+            $('#soundRed')[0].play();
             $('.red').css('background-color', '#ff1a1a')
             setTimeout(function(){
                 $('.red').css('background-color', '#cc0000')
@@ -20,6 +22,7 @@ var simon = {
     "yellowButton": {
         "id": 2,
         response: function(){
+            $('#soundYellow')[0].play();
             $('.yellow').css('background-color', '#ffff1a')
             setTimeout(function(){
                 $('.yellow').css('background-color', '#cccc00')
@@ -29,6 +32,7 @@ var simon = {
     "blueButton": {
         "id": 3,
         response: function(){
+            $('#soundBlue')[0].play();
             $('.blue').css('background-color', '#1a1aff')
             setTimeout(function(){
                 $('.blue').css('background-color', '#000099')
@@ -54,7 +58,7 @@ var simon = {
                         }else{
                             simon.blueButton.response();
                         }
-                    }, 1500 * i);
+                    }, 1000 * i);
                 }(i));
             }
         },
@@ -86,6 +90,7 @@ $(document).ready(function() {
         simon.greenButton.response()
         simon.brain.userMoveSet.push(simon.greenButton.id)
         if(simon.brain.simonKnows()){
+            console.log('youdidit')
             simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays();
@@ -98,6 +103,7 @@ $(document).ready(function() {
         simon.redButton.response()
         simon.brain.userMoveSet.push(simon.redButton.id)
         if(simon.brain.simonKnows()){
+            console.log('youdidit')
             simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays();
@@ -110,6 +116,7 @@ $(document).ready(function() {
         simon.yellowButton.response()
         simon.brain.userMoveSet.push(simon.yellowButton.id)
         if(simon.brain.simonKnows()){
+            console.log('youdidit')
             simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays();
@@ -122,6 +129,7 @@ $(document).ready(function() {
         simon.blueButton.response()
         simon.brain.userMoveSet.push(simon.blueButton.id)
         if(simon.brain.simonKnows()){
+            console.log('youdidit')
             simon.brain.clearUser()
             setTimeout(function(){
                 simon.brain.simonSays();
