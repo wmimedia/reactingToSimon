@@ -17,20 +17,27 @@ The game is SIMON! Press start and simon will tell you what button to click. Cli
 
 -User Story method below-
 
-1. - User Stories -(Stories will be marked on the Right as they have been added. They will be 0 indexed so you can see what day of the project they were added - Stories will be marked on the left as priority for Bronze, Silver, Gold MVP plan with 1 being Bronze, 2 Silver, and 3 Gold - All ones should be completed before moving on to 2's and same for 3. The commit history will reflect the stories being worked on with a similar naming convention)
+1. - User Stories -
 
-Right-Side              MVP-Code
-0-Friday                1-Bronze
-1-Saturday              2-Silver
-2-Sunday                3-Gold
-3-Monday
-4-Tuesday
-5-Wednesday
+<p>(Stories will be marked on the Right as they have been added. They will be 0 indexed so you can see what day of the project they were added - Stories will be marked on the left as priority for Bronze, Silver, Gold MVP plan with 1 being Bronze, 2 Silver, and 3 Gold - All ones should be completed before moving on to 2's and same for 3. The commit history will reflect the stories being worked on with a similar naming convention)</p>
+
+| Right-Side    | MVP-Code      |
+| ------------- |:-------------:|
+| 0-Friday      | 1-Bronze      |
+| 1-Saturday    | 2-Silver      |   
+| 2-Sunday      | 3-Gold        |
+| 3-Monday
+| 4-Tusday
+| 5-Wednesday              
 
 
-2. -Functionality-
-0 As a user, I want the Simon game to respond when I tell it to start, so that I know it accepted my start command(buttons lit etc) - 2
-0 As a user, I want to be able to pick between classic Simon, which does not speed up the input, and advanced simon, which does speed up the input, so that there is variation in the game for advanced users - 3
+
+
+<h2>-Functionality-</h2>
+    <ul>
+        <li>0 As a user, I want the Simon game to respond when I tell it to start, so that I know it accepted my start command(buttons lit etc) - 2</li>
+        <li>0 As a user, I want to be able to pick between classic Simon, which does not speed up the input, and advanced simon, which does speed up the input, so that there is variation in the game for advanced users - 3</li>
+    </ul>
 
 3. -Design-
 0 As a user, I want there to be a welcome screen that links to the main game, so that I can control when I go to the game - 2
