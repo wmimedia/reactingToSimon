@@ -1,6 +1,6 @@
 var simon = {
     "greenButton": {
-        "id": 1,
+        "id": 0,
         response: function(){
             $('.green').css('background-color', '#1aff1a')
             setTimeout(function(){
@@ -9,7 +9,7 @@ var simon = {
         }
     },
     "redButton": {
-        "id": 2,
+        "id": 1,
         response: function(){
             $('.red').css('background-color', '#ff1a1a')
             setTimeout(function(){
@@ -18,7 +18,7 @@ var simon = {
         }
     },
     "yellowButton": {
-        "id": 3,
+        "id": 2,
         response: function(){
             $('.yellow').css('background-color', '#ffff1a')
             setTimeout(function(){
@@ -27,7 +27,7 @@ var simon = {
         }
     },
     "blueButton": {
-        "id": 4,
+        "id": 3,
         response: function(){
             $('.blue').css('background-color', '#1a1aff')
             setTimeout(function(){
@@ -39,8 +39,9 @@ var simon = {
         "userMoveSet":[],
         "simonMoveSet":[],
         simonSays: function(){
-            var theMove = Math.floor(Math.random() * (5 - 1)) + 1;
+            var theMove = Math.floor(Math.random() * (4 - 1)) + 1;
             simon.brain.simonMoveSet.push(theMove)
+            console.log('starting the loop')
             for(i=0;i<this.simonMoveSet.length;i++){
                 (function(i){
                     setTimeout(function(){
@@ -53,7 +54,7 @@ var simon = {
                         }else{
                             simon.blueButton.response();
                         }
-                    }, 1000 * i);
+                    }, 2000 * i);
                 }(i));
             }
         },
@@ -66,8 +67,8 @@ var simon = {
             }
         },
         simonIsMad: function() {
-            simon.brain.userMoveSet=[]
-            simon.brain.simonMoveSet=[]
+            // simon.brain.userMoveSet=[]
+            // simon.brain.simonMoveSet=[]
             alert('Restart! You missed the pattern!')
         },
     }
@@ -85,11 +86,8 @@ $(document).ready(function() {
     $('.red').on('click', function(event) {
         simon.redButton.response()
         simon.brain.userMoveSet.push(simon.redButton.id)
-        if(simon.brain.simonKnows()){
-            simon.brain.simonSays()
-        }else{
-            simon.brain.simonIsMad();
-        }
+        console.log('here we go')
+        simon.brain.simonSays()
     });
     $('.yellow').on('click',function(event) {
         simon.yellowButton.response()
@@ -118,3 +116,5 @@ $(document).ready(function() {
 
 //First Issue, for-loop is synchronous and setTimout is asynchronous. Sooooo our pattern is being executed at the exact same time(lights same time no pause).
 //Solved issue http://stackoverflow.com/questions/11764714/applying-delay-between-iterations-of-javascript-for-loop - Review Saturday Morning -
+
+//simonSays function works as expected. I click start to call function and it runs once. I click start again and it plays the original move followed by a second move. simonSays() is functionally correct
