@@ -58,7 +58,7 @@ var simon = {
                         }else{
                             simon.blueButton.response();
                         }
-                    }, 600 * i);
+                    }, 400 * i);
                 }(i));
             }
         },
