@@ -41,29 +41,21 @@ var simon = {
         simonSays: function(){
             var theMove = Math.floor(Math.random() * (5 - 1)) + 1;
             simon.brain.simonMoveSet.push(theMove)
-            var maxLoops = this.simonMoveSet.length
-            var counter = 0
-            (function next(counter, maxLoops){
-                if(counter++ >= maxLoops) return;
-                setTimeout(function(){
-
-                    switch(this.simonMoveSet[counter]){
-                    case 1:
-                        simon.greenButton.response();
-                        break;
-                    case 2:
-                        simon.redButton.response();
-                        break;
-                    case 3:
-                        simon.yellowButton.response();
-                        break;
-                    case 4:
-                        simon.blueButton.response();
-                        break;
-                    }
-                    next(counter, maxLoops);
-                }, 1500);
-            })(0,maxLoops);
+            for(i=0;i<this.simonMoveSet.length;i++){
+                (function(i){
+                    setTimeout(function(){
+                        if(simon.brain.simonMoveSet[i]==0){
+                            simon.greenButton.response();
+                        }else if (simon.brain.simonMoveSet[i]==1){
+                            simon.redButton.response();
+                        }else if (simon.brain.simonMoveSet[i]==2) {
+                            simon.yellowButton.response();
+                        }else{
+                            simon.blueButton.response();
+                        }
+                    }, 1000 * i);
+                }(i));
+            }
         }
     }
 }
@@ -93,3 +85,4 @@ $(document).ready(function() {
 
 
 //First Issue, for-loop is synchronous and setTimout is asynchronous. Sooooo our pattern is being executed at the exact same time(lights same time no pause).
+//Solved issue http://stackoverflow.com/questions/11764714/applying-delay-between-iterations-of-javascript-for-loop - Review Saturday Morning - Very cool
