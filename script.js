@@ -42,6 +42,36 @@ var simon = {
     "brain": {
         "userMoveSet":[],
         "simonMoveSet":[],
+        simonWillFlash: function(){
+            $('.green').css('background-color', '#1aff1a')
+            setTimeout(function(){
+                $('.green').css('background-color', '#00cc00')
+            }, 200)
+            $('.red').css('background-color', '#ff1a1a')
+            setTimeout(function(){
+                $('.red').css('background-color', '#cc0000')
+            }, 200)
+            $('.yellow').css('background-color', '#ffff1a')
+            setTimeout(function(){
+                $('.yellow').css('background-color', '#cccc00')
+            }, 200)
+            $('.blue').css('background-color', '#1a1aff')
+            setTimeout(function(){
+                $('.blue').css('background-color', '#000099')
+            }, 200)
+        },
+        simonIsPretty: function(){
+            simon.brain.simonWillFlash()
+            setTimeout(function(){
+                simon.brain.simonWillFlash()
+            },1000)
+            setTimeout(function(){
+                simon.brain.simonWillFlash()
+            },2000)
+            setTimeout(function(){
+                simon.brain.simonWillFlash()
+            },3000)
+        },
         simonSays: function(){
             var theMove = Math.floor(Math.random() * (4 - 1)) + 1;
             simon.brain.simonMoveSet.push(theMove)
@@ -80,7 +110,11 @@ var simon = {
         simonIsMad: function() {
             simon.brain.userMoveSet = []
             simon.brain.simonMoveSet = []
-            alert('Restart! You missed the pattern!')
+            simon.brain.simonIsPretty()
+            $('#endSound')[0].play()
+            setTimeout(function(){
+                alert('What have you done?! Simon is SO MAD! Click Start to redeem yourself')
+            }, 3000)
         },
         clearUser: function() {
             simon.brain.userMoveSet = []
@@ -162,7 +196,11 @@ $(document).ready(function() {
     });
     $('.start').on('click', function(event) {
         event.preventDefault();
-        simon.brain.simonSays();
+        $('#startUpSound')[0].play()
+        simon.brain.simonIsPretty()
+        setTimeout(function(){
+            simon.brain.simonSays();
+        }, 7000)
     });
 });
 
