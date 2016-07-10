@@ -71,11 +71,13 @@ var simon = {
             setTimeout(function(){
                 simon.brain.simonWillFlash()
             },3000)
+            setTimeout(function(){
+                simon.brain.simonWillFlash()
+            },4000)
         },
         simonSays: function(){
             var theMove = Math.floor(Math.random() * (4 - 1)) + 1;
             simon.brain.simonMoveSet.push(theMove)
-            console.log('starting the loop')
             for(i=0;i<this.simonMoveSet.length;i++){
                 (function(i){
                     setTimeout(function(){
@@ -200,11 +202,6 @@ $(document).ready(function() {
         simon.brain.simonIsPretty()
         setTimeout(function(){
             simon.brain.simonSays();
-        }, 7000)
+        }, 5500)
     });
 });
-
-//make it so that you can interact with the buttons seperatly of the logic being called probably by putting a conditional at the start of the click handelers checking for a computer move set length
-
-//shorten green button sound more
-//shorten yellow button more
