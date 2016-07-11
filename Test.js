@@ -78,10 +78,6 @@ var simon = {
         simonSays: function(){
             var theMove = Math.floor(Math.random() * (4 - 1)) + 1;
             simon.brain.simonMoveSet.push(theMove)
-            $("h2").html(function(){
-                var roundCounter = simon.brain.simonMoveSet.length
-                return "Round: " + roundCounter;
-            })
             for(i=0;i<this.simonMoveSet.length;i++){
                 (function(i){
                     setTimeout(function(){
@@ -138,7 +134,7 @@ $(document).ready(function() {
                     simon.brain.simonSays();
                 }, 1100)
             }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
-
+                console.log('keepgoing')
             }else{
                 simon.brain.simonIsMad()
             }
@@ -156,7 +152,7 @@ $(document).ready(function() {
                     simon.brain.simonSays();
                 }, 1100)
             }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
-
+                console.log('keepgoing')
             }else{
                 simon.brain.simonIsMad()
             }
@@ -174,7 +170,7 @@ $(document).ready(function() {
                     simon.brain.simonSays();
                 }, 1100)
             }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
-
+                console.log('keepgoing')
             }else{
                 simon.brain.simonIsMad()
             }
@@ -192,7 +188,7 @@ $(document).ready(function() {
                     simon.brain.simonSays();
                 }, 1100)
             }else if(simon.brain.simonChecksMoves() && !simon.brain.simonChecksLength()){
-                
+                console.log('keepgoing')
             }else{
                 simon.brain.simonIsMad()
             }
