@@ -1,13 +1,13 @@
 var simon = {
-    Button: function(id,audio,colorClass,color,colorOne) {
+    Button: function(id,html,colorClass,color,colorOne) {
         var self = this;
         this.id = id,
-        this.audo = audio,
+        this.html = html,
         this.colorClass = colorClass,
         this.color = color,
         this.colorOne = colorOne,
         this.response = function(){
-            $(this.audio)[0].play();
+            $(this.html)[0].play();
             $(this.colorClass).css('background-color', this.color)
             setTimeout(function(){
                 $(self.colorClass).css('background-color', self.colorOne)
@@ -27,15 +27,11 @@ var simon = {
             for(i=0;i<this.simonMoveSet.length;i++){
                 (function(i){
                     setTimeout(function(){
-                        if(simon.brain.simonMoveSet[i]==0){
-                            greenButton.response();
-                        }else if (simon.brain.simonMoveSet[i]==1){
-                            redButton.response();
-                        }else if (simon.brain.simonMoveSet[i]==2) {
-                            yellowButton.response();
-                        }else{
-                            blueButton.response();
-                        }
+                        buttons.forEach(function(button) {
+                            if(button.id == simon.brain.simonMoveSet[i]){
+                                button.response()
+                            }
+                        })
                     }, 400 * i);
                 }(i));
             }
@@ -69,7 +65,7 @@ var greenButton = new simon.Button(0,'#soundGreen','.greenButton','#1aff1a','#00
 var redButton = new simon.Button (1,'#soundRed','.redButton','#ff1a1a','#cc0000')
 var yellowButton = new simon.Button(2,'#soundYellow','.yellowButton','#ffff1a','#cccc00')
 var blueButton = new simon.Button(3,'#soundBlue','.blueButton','#1a1aff','#000099')
-var buttons = [greenButton, redButton, yellowButton, blueButton]
+buttons = [greenButton, redButton, yellowButton, blueButton]
 $(document).ready(function() {
     buttons.forEach(function(button) {
         $(button.colorClass).on('click', function(event) {
@@ -91,11 +87,10 @@ $(document).ready(function() {
         });
     })
     $('.start').on('click', function(event) {
-        event.preventDefault();
         $("h2").html('Round: 0')
         $('#startUpSound')[0].play()
         setTimeout(function(){
             simon.brain.simonSays();
-        }, 5500)
+        }, 5000)
     })
 })
