@@ -116,7 +116,7 @@ var simon = {
             $('#endSound')[0].play()
             setTimeout(function(){
                 alert('What have you done?! Simon is SO MAD! Click Start to redeem yourself')
-            }, 3000)
+            }, 4200)
         },
         clearUser: function() {
             simon.brain.userMoveSet = []
