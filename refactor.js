@@ -57,7 +57,7 @@ var simon = {
             $('#endSound')[0].play()
             setTimeout(function(){
                 alert('What have you done?! Simon is SO MAD! You got ' + roundCounter + ' rounds Click Start to redeem yourself')
-            }, 3200)
+            }, 2200)
         }
     }
 }
@@ -87,10 +87,14 @@ $(document).ready(function() {
         });
     })
     $('.start').on('click', function(event) {
+        simon.brain.simonMoveSet = []
         $("h2").html('Round: 0')
         $('#startUpSound')[0].play()
+        buttons.forEach(function(button) {
+            button.response()
+        })
         setTimeout(function(){
             simon.brain.simonSays();
-        }, 5000)
+        }, 4800)
     })
 })
