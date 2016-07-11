@@ -67,3 +67,10 @@ header{
 .blue{
     background-color: #000099;
 }
+
+h2{
+    color: white;
+    position: r;
+    margin: 0 auto;
+    text-align: center;
+}
