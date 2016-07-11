@@ -51,20 +51,20 @@ header{
   box-shadow: none;
 }
 
-.green{
+.greenButton{
     background-color: #00cc00;
 }
 
-.red{
+.redButton{
     background-color: #cc0000;
 
 }
 
-.yellow{
+.yellowButton{
     background-color: #cccc00;
 }
 
-.blue{
+.blueButton{
     background-color: #000099;
 }
 
