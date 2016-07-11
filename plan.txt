@@ -21,12 +21,11 @@ Right-Side              MVP-Code
 
 
 -Functionality-
-0 As a user, I want the Simon game to respond when I tell it to start, so that I know it accepted my start command(buttons lit etc) - 2
+
 0 As a user, I want to be able to pick between classic Simon, which does not speed up the input, and advanced simon, which does speed up the input, so that there is variation in the game for advanced users - 3
 
 -Design-
-0 As a user, I want there to be a welcome screen that links to the main game, so that I can control when I go to the game - 2
-0 As a user, I want there to be a scoreboard, so that I can be competitive with the people I'm playing with - 3
+
 0 As a user, I want my website to be responsive, so that I can access it and have it look good anywhere - 3
 
 
@@ -38,9 +37,8 @@ Right-Side              MVP-Code
 0 As a user, I want there to be 4 unique sounds for each button, so that the game provides auditory as well as visual feedback - 1 COMPLETE July 8**
 0 As a user, I want the buttons to light up when I click them, so that there is visual feedback - 1 COMPLETE July 8**
 0 As a user, I want the Simon game to tell me when I'm wrong, so that the game can reset- 1 COMPLETE JULY 9**
-
-
-
+0 As a user, I want the Simon game to respond when I tell it to start, so that I know it accepted my start command(buttons lit etc) - 2 Complete July 10
+0 As a user, I want there to be a scoreboard, so that I can be competitive with the people I'm playing with - Complete July 10
 
 
 
@@ -52,7 +50,7 @@ xx- MVP PLAN -xx
 -project workflow is consistent with parameters set forth on Friday
 -code is readable and refactored to meet presentation requirement
 
--Silver-
+-Silver- Complete July 10
 -All Bronze level criteria has been met
 -Simon Game functions in accordance with all user stories labeled at the bronze & silver level
 
