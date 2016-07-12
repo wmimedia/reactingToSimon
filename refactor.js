@@ -53,7 +53,7 @@ var simon = {
         simonIsMad: function() {
             $('#endSound')[0].play()
             setTimeout(function(){
-                alert('What have you done?! Simon is SO MAD! You got ' + roundCounter + ' rounds Click Start to redeem yourself')
+                alert('What have you done?! Simon is SO MAD! You got ' + simon.brain.simonMoveSet.length + ' rounds Click Start to redeem yourself')
             }, 2200)
         }
     }
