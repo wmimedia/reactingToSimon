@@ -18,8 +18,7 @@ var simon = {
         "userMoveSet":[],
         "simonMoveSet":[],
         simonSays: function(){
-            var theMove = Math.floor(Math.random() * (4 - 1)) + 1;
-            simon.brain.simonMoveSet.push(theMove)
+            simon.brain.simonMoveSet.push(Math.floor(Math.random() * 4))
             $("h2").html(function(){
                 return "Round: " + simon.brain.simonMoveSet.length;
             })
@@ -58,13 +57,11 @@ var simon = {
         }
     }
 }
-
 var greenButton = new simon.Button(0,'#soundGreen','.greenButton','#1aff1a','#00cc00')
 var redButton = new simon.Button (1,'#soundRed','.redButton','#ff1a1a','#cc0000')
 var yellowButton = new simon.Button(2,'#soundYellow','.yellowButton','#ffff1a','#cccc00')
 var blueButton = new simon.Button(3,'#soundBlue','.blueButton','#1a1aff','#000099')
 buttons = [greenButton, redButton, yellowButton, blueButton]
-
 $(document).ready(function() {
     buttons.forEach(function(button) {
         $(button.colorClass).on('click', function(event) {
