@@ -51,6 +51,7 @@ var simon = {
             }
         },
         simonIsMad: function() {
+            clearInterval(timer)
             $('#endSound')[0].play()
             setTimeout(function(){
                 alert('What have you done?! Simon is SO MAD! You got ' + simon.brain.simonMoveSet.length + ' rounds Click Start to redeem yourself')
@@ -66,10 +67,10 @@ var simon = {
         }
     }
 }
-var greenButton = new simon.Button(0,'#soundGreen','.greenButton','#1aff1a','#00cc00')
-var redButton = new simon.Button (1,'#soundRed','.redButton','#ff1a1a','#cc0000')
-var yellowButton = new simon.Button(2,'#soundYellow','.yellowButton','#ffff1a','#cccc00')
-var blueButton = new simon.Button(3,'#soundBlue','.blueButton','#1a1aff','#000099')
+var greenButton = new simon.Button(0,'#soundGreen','.greenButton','#1aff1a','#007000')
+var redButton = new simon.Button (1,'#soundRed','.redButton','#ff1a1a','#b30000')
+var yellowButton = new simon.Button(2,'#soundYellow','.yellowButton','#ffff1a','#b3b300')
+var blueButton = new simon.Button(3,'#soundBlue','.blueButton','#3333ff','#000080')
 buttons = [greenButton, redButton, yellowButton, blueButton]
 $(document).ready(function() {
     buttons.forEach(function(button) {
@@ -100,12 +101,14 @@ $(document).ready(function() {
             button.response()
         })
         setTimeout(function(){
+            var counter= 1
             simon.brain.simonSays();
+            timer = setInterval(function(){
+                 $('.time').html('Time: ' + counter++)
+            },1000)
         }, 4800)
     })
     $('.insane').on('click', function(event) {
-        simon.brain.simonSpeed[0] = 150
-        var currentCountDown = simon.brain.simonCountDown(30000)
-        currentCountDown()
+        simon.brain.simonSpeed[0] = 180
     });
 })

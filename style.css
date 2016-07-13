@@ -33,13 +33,13 @@ header{
     height:250px;
     margin: .4em .7em;
     box-shadow: 0 5px 0px;
-    border-bottom: 1px solid rgba(179, 179, 179, .6);
-    border-right: 1px solid rgba(179, 179, 179, .6);
+    border-bottom: 1px solid rgba(110, 110, 110, .4);
+    border-right: 1px solid rgba(110, 110, 110, .4);
 }
 
 .button:hover{
-    border-bottom: 2px solid rgba(179, 179, 179, .8);
-    border-right: 2px solid rgba(179, 179, 179, .7);
+    border-bottom: 2px solid rgba(110, 110, 110, .7);
+    border-right: 1px solid rgba(110, 110, 110, .9);
 }
 
 .button:active{
@@ -49,25 +49,29 @@ header{
   transform:translateY(4px);
   border-bottom-width: 2px;
   box-shadow: none;
+  border:0px solid rgba(0,0,0,0);
 }
 
 .greenButton{
-    background-color: #00cc00;
+    background-color: #007000;
     border-top-left-radius: 255px;
+    border-left: 1px solid rgba(210, 210, 210, .9);
 }
 
 .redButton{
-    background-color: #cc0000;
+    background-color: #b30000;
     border-top-right-radius: 255px;
 }
 
 .yellowButton{
-    background-color: #cccc00;
+    background-color: #b3b300;
     border-bottom-left-radius: 255px;
+    border-left: 1px solid rgba(210, 210, 210, .9);
+    border-bottom: 1px solid rgba(210, 210, 210, .9);
 }
 
 .blueButton{
-    background-color: #000099;
+    background-color: #000080;
     border-bottom-right-radius: 255px;
 }
 
@@ -78,11 +82,11 @@ h2{
 }
 
 .time{
-    margin: 0em 18em 0em 0em;
+    margin: 0em 20em 0em 0em;
     float: right;
     display: inline-block;
 }
 
 .round{
-    margin: 0em 0em 0em 18em;
+    margin: 0em 0em 0em 20em;
 }
