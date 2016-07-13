@@ -1,4 +1,3 @@
-
 var simon = {
     Button: function(id,html,colorClass,color,colorOne) {
         var self = this;
@@ -53,9 +52,10 @@ var simon = {
         },
         simonIsMad: function() {
             $('#endSound')[0].play()
-            simon.brain.simonMoveSet = []
             setTimeout(function(){
                 alert('What have you done?! Simon is SO MAD! You got ' + simon.brain.simonMoveSet.length + ' rounds Click Start to redeem yourself')
+                simon.brain.simonMoveSet = []
+                $(".round").html('Round: 0')
             }, 2200)
         },
         simonCountDown: function(timeRemaining){

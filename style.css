@@ -24,12 +24,7 @@ header{
 .container > button{
     flex: 0 2 50%;
     margin: 0 45em;
-    padding: 0 5em;
-}
-.container > .mode{
-    flex: 0 2 50%;
-    margin: 0 45em;
-    padding: 0 5em;
+    padding: 0em;
 }
 
 .button{
