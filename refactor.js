@@ -56,12 +56,15 @@ var simon = {
             localStorage.setItem('time', counter)
             $('#endSound')[0].play()
             setTimeout(function(){
-                alert('What have you done?! Simon is SO MAD! You had ' + simon.brain.simonMoveSet.length + ' rounds scored. Click Start to redeem yourself')
+                var name = prompt('What have you done?! Simon is SO MAD! You had ' + simon.brain.simonMoveSet.length + ' rounds scored. Enter your name for glory')
+                localStorage.setItem('name', name)
                 simon.brain.simonMoveSet = []
-                $(".round").html('Round: 0')
-                $('.time').html('Time: 00')
-                $('.userScore').html(localStorage.getItem('score'))
-                $('.userTime').html(localStorage.getItem('time'))
+                $('.userName').remove()
+                $('.userScore').remove()
+                $('.userTime').remove()
+                $('#entries').append("<td class = 'userName'>" + localStorage.getItem('name') + "</td>")
+                $('#entries').append("<td class = 'userScore'>" + localStorage.getItem('score') + "</td>")
+                $('#entries').append("<td class = 'userTime'>" + localStorage.getItem('time') + "</td>")
             }, 2200)
         },
     }
@@ -72,6 +75,7 @@ var yellowButton = new simon.Button(2,'#soundYellow','.yellowButton','#ffff1a','
 var blueButton = new simon.Button(3,'#soundBlue','.blueButton','#3333ff','#000080')
 buttons = [greenButton, redButton, yellowButton, blueButton]
 $(document).ready(function() {
+    $('.userName').html(localStorage.getItem('name'))
     $('.userScore').html(localStorage.getItem('score'))
     $('.userTime').html(localStorage.getItem('time'))
     buttons.forEach(function(button) {
