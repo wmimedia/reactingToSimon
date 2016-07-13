@@ -59,12 +59,11 @@ var simon = {
                 var name = prompt('What have you done?! Simon is SO MAD! You had ' + simon.brain.simonMoveSet.length + ' rounds scored. Enter your name for glory')
                 localStorage.setItem('name', name)
                 simon.brain.simonMoveSet = []
-                $('.userName').remove()
-                $('.userScore').remove()
-                $('.userTime').remove()
-                $('#entries').append("<td class = 'userName'>" + localStorage.getItem('name') + "</td>")
-                $('#entries').append("<td class = 'userScore'>" + localStorage.getItem('score') + "</td>")
-                $('#entries').append("<td class = 'userTime'>" + localStorage.getItem('time') + "</td>")
+                var dataSet=['name','score','time']
+                $('td').remove()
+                dataSet.forEach(function(data){
+                    $('#entries').append("<td>" + localStorage.getItem(data) + "</td>")
+                })
             }, 2200)
         },
     }
