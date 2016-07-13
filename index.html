@@ -8,8 +8,22 @@
 </head>
 <body>
     <header>Simon!</header>
-    <h2 class = 'round'>Round: 0</h2>
-    <h2 class = 'time'>Time: 00</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Score</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>AAA</td>
+                <td class ='userScore' ></td>
+                <td class = 'userTime'></td>
+            </tr>
+        </tbody>
+    </table>
         <div class='container'>
             <div class='greenButton button'></div>
             <div class='redButton button'></div>
@@ -18,6 +32,8 @@
             <div class='yellowButton button'></div>
             <div class='blueButton button'></div>
         </div>
+        <h2 class = 'round'>Score: 0</h2>
+        <h2 class = 'time'>Time: 00</h2>
         <audio id="endSound"><source src="./sounds/end.wav" type='audio/wav'></audio>
         <audio id="startUpSound"><source src="./sounds/gameStart.wav" type='audio/wav'></audio>
         <audio id="soundGreen"><source src="./sounds/beep2.wav" type="audio/wav"></audio>

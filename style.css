@@ -4,11 +4,12 @@ html{
     background-image: url('https://www.walldevil.com/wallpapers/a18/wallpaper-green-blue-yellow-red-blackwhite28-desktop.jpg');
 }
 
-
 header{
+    position: relative;
     text-align: center;
-    font-size: 10em;
+    font-size: 8em;
     color: white;
+    margin: 0 auto;
 }
 
 .container{
@@ -19,6 +20,7 @@ header{
     margin: 0 3em;
     flex-direction: row;
     padding:5px;
+    padding-top: 0px;
 }
 
 .container > button{
@@ -29,9 +31,9 @@ header{
 
 .button{
     position: relative;
-    width:250px;
-    height:250px;
-    margin: .4em .7em;
+    width:225px;
+    height:225px;
+    margin: .3em .7em;
     box-shadow: 0 5px 0px;
     border-bottom: 1px solid rgba(110, 110, 110, .4);
     border-right: 1px solid rgba(110, 110, 110, .4);
@@ -56,15 +58,18 @@ header{
     background-color: #007000;
     border-top-left-radius: 255px;
     border-left: 1px solid rgba(210, 210, 210, .9);
+    margin-right: .4em
 }
 
 .redButton{
     background-color: #b30000;
     border-top-right-radius: 255px;
+    margin-left: .4em;
 }
 
 .yellowButton{
     background-color: #b3b300;
+    margin-right: .4em;
     border-bottom-left-radius: 255px;
     border-left: 1px solid rgba(210, 210, 210, .9);
     border-bottom: 1px solid rgba(210, 210, 210, .9);
@@ -73,6 +78,7 @@ header{
 .blueButton{
     background-color: #000080;
     border-bottom-right-radius: 255px;
+    margin-left: .4em;
 }
 
 h2{
@@ -89,4 +95,62 @@ h2{
 
 .round{
     margin: 0em 0em 0em 20em;
+}
+
+.scoreLine{
+    color: #ffff99;
+}
+
+.timeLine{
+    color: #ffff99;
+}
+
+table{
+    background: rgba(1, 43, 57, .4);
+    border-radius: 0.25em;
+    border-collapse: collapse;
+    margin-left: 9em;
+}
+th {
+  border-bottom: 1px solid #364043;
+  color: #ffff99;
+  font-size: 0.85em;
+  font-weight: 400;
+  padding: 0.5em 1em;
+  text-align: left;
+}
+
+td {
+  color: #fff;
+  font-weight: 200;
+  padding: 0.65em 1em;
+}
+
+tbody tr {
+  transition: background 0.25s ease;
+}
+tbody tr:hover {
+  background: #014055;
+}
+
+.start {
+	background-color:transparent;
+	border-radius:28px;
+	border:1px solid #ffffff;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	padding:3px 18px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.start:hover {
+	background-color:transparent;
+    border-bottom: 2px solid;
+    border-right: 2px solid
+}
+.start:active {
+	position:relative;
+	top:1px;
 }

@@ -52,19 +52,18 @@ var simon = {
         },
         simonIsMad: function() {
             clearInterval(timer)
+            localStorage.setItem('score', simon.brain.simonMoveSet.length)
+            localStorage.setItem('time', counter)
             $('#endSound')[0].play()
             setTimeout(function(){
-                alert('What have you done?! Simon is SO MAD! You got ' + simon.brain.simonMoveSet.length + ' rounds Click Start to redeem yourself')
+                alert('What have you done?! Simon is SO MAD! You had ' + simon.brain.simonMoveSet.length + ' rounds scored. Click Start to redeem yourself')
                 simon.brain.simonMoveSet = []
                 $(".round").html('Round: 0')
+                $('.time').html('Time: 00')
+                $('.userScore').html(localStorage.getItem('score'))
+                $('.userTime').html(localStorage.getItem('time'))
             }, 2200)
         },
-        simonCountDown: function(timeRemaining){
-            var startTime = Date.now();
-            return function() {
-                return timeRemaining - ( Date.now() - startTime );
-            }
-        }
     }
 }
 var greenButton = new simon.Button(0,'#soundGreen','.greenButton','#1aff1a','#007000')
@@ -73,6 +72,8 @@ var yellowButton = new simon.Button(2,'#soundYellow','.yellowButton','#ffff1a','
 var blueButton = new simon.Button(3,'#soundBlue','.blueButton','#3333ff','#000080')
 buttons = [greenButton, redButton, yellowButton, blueButton]
 $(document).ready(function() {
+    $('.userScore').html(localStorage.getItem('score'))
+    $('.userTime').html(localStorage.getItem('time'))
     buttons.forEach(function(button) {
         $(button.colorClass).on('click', function(event) {
             if(simon.brain.simonMoveSet.length != 0){
@@ -101,7 +102,7 @@ $(document).ready(function() {
             button.response()
         })
         setTimeout(function(){
-            var counter= 1
+            counter= 1
             simon.brain.simonSays();
             timer = setInterval(function(){
                  $('.time').html('Time: ' + counter++)
@@ -109,6 +110,8 @@ $(document).ready(function() {
         }, 4800)
     })
     $('.insane').on('click', function(event) {
+        simon.brain.userMoveSet = []
+        simon.brain.simonMoveSet = []
         simon.brain.simonSpeed[0] = 180
     });
 })
