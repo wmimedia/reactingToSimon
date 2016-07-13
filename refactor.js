@@ -1,3 +1,4 @@
+
 var simon = {
     Button: function(id,html,colorClass,color,colorOne) {
         var self = this;
@@ -14,12 +15,13 @@ var simon = {
             }, 200)
         }
     },
-    "brain": {
+    brain: {
         "userMoveSet":[],
         "simonMoveSet":[],
+        "simonSpeed":[400],
         simonSays: function(){
             simon.brain.simonMoveSet.push(Math.floor(Math.random() * 4))
-            $("h2").html(function(){
+            $(".round").html(function(){
                 return "Round: " + simon.brain.simonMoveSet.length;
             })
             for(i=0;i<this.simonMoveSet.length;i++){
@@ -30,7 +32,7 @@ var simon = {
                                 button.response()
                             }
                         })
-                    }, 400 * i);
+                    }, simon.brain.simonSpeed[0] * i);
                 }(i));
             }
         },
@@ -51,9 +53,16 @@ var simon = {
         },
         simonIsMad: function() {
             $('#endSound')[0].play()
+            simon.brain.simonMoveSet = []
             setTimeout(function(){
                 alert('What have you done?! Simon is SO MAD! You got ' + simon.brain.simonMoveSet.length + ' rounds Click Start to redeem yourself')
             }, 2200)
+        },
+        simonCountDown: function(timeRemaining){
+            var startTime = Date.now();
+            return function() {
+                return timeRemaining - ( Date.now() - startTime );
+            }
         }
     }
 }
@@ -85,7 +94,7 @@ $(document).ready(function() {
     $('.start').on('click', function(event) {
         simon.brain.userMoveSet = []
         simon.brain.simonMoveSet = []
-        $("h2").html('Round: 0')
+        $(".round").html('Round: 0')
         $('#startUpSound')[0].play()
         buttons.forEach(function(button) {
             button.response()
@@ -94,4 +103,9 @@ $(document).ready(function() {
             simon.brain.simonSays();
         }, 4800)
     })
+    $('.insane').on('click', function(event) {
+        simon.brain.simonSpeed[0] = 150
+        var currentCountDown = simon.brain.simonCountDown(30000)
+        currentCountDown()
+    });
 })

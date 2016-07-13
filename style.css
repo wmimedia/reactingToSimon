@@ -22,17 +22,21 @@ header{
 }
 
 .container > button{
-    flex: 0 1 100%;
-    margin: 0 35em;
-    padding: 0 20em;
+    flex: 0 2 50%;
+    margin: 0 45em;
+    padding: 0 5em;
+}
+.container > .mode{
+    flex: 0 2 50%;
+    margin: 0 45em;
+    padding: 0 5em;
 }
 
 .button{
     position: relative;
-    width:230px;
-    height:230px;
-    margin: 2em 3em;
-    border-radius: 3px;
+    width:250px;
+    height:250px;
+    margin: .4em .7em;
     box-shadow: 0 5px 0px;
     border-bottom: 1px solid rgba(179, 179, 179, .6);
     border-right: 1px solid rgba(179, 179, 179, .6);
@@ -54,24 +58,36 @@ header{
 
 .greenButton{
     background-color: #00cc00;
+    border-top-left-radius: 255px;
 }
 
 .redButton{
     background-color: #cc0000;
-
+    border-top-right-radius: 255px;
 }
 
 .yellowButton{
     background-color: #cccc00;
+    border-bottom-left-radius: 255px;
 }
 
 .blueButton{
     background-color: #000099;
+    border-bottom-right-radius: 255px;
 }
 
 h2{
     color: white;
-    position: r;
-    margin: 0 auto;
     text-align: center;
+    display: inline-block;
+}
+
+.time{
+    margin: 0em 18em 0em 0em;
+    float: right;
+    display: inline-block;
+}
+
+.round{
+    margin: 0em 0em 0em 18em;
 }
