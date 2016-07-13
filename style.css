@@ -51,7 +51,11 @@ header{
   transform:translateY(4px);
   border-bottom-width: 2px;
   box-shadow: none;
-  border:0px solid rgba(0,0,0,0);
+  border: none;
+  outline:none;
+}
+.start:focus {
+    outline:0;
 }
 
 .greenButton{
