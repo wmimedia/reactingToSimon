@@ -162,7 +162,7 @@ tbody tr:hover {
 	top:1px;
 }
 
-@media (max-width: 796px) {
+@media (min-width: 796px) {
 
     .container > button{
         flex: 0 2 50%;
