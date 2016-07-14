@@ -105,8 +105,8 @@ $(document).ready(function() {
             button.response()
         })
         setTimeout(function(){
-            counter= 1
             simon.brain.simonSays();
+            counter= 1
             timer = setInterval(function(){
                  $('.time').html('Time: ' + counter++)
             },1000)
