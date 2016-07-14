@@ -166,7 +166,7 @@ tbody tr:hover {
 
     .container > button{
         flex: 0 2 50%;
-        margin: 0 10em;
+        margin: 0 20em;
         padding: 0em;
     }
     .time{
