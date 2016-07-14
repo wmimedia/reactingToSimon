@@ -101,16 +101,13 @@ $(document).ready(function() {
         simon.brain.simonMoveSet = []
         $(".round").html('Round: 0')
         $('#startUpSound')[0].play()
-        buttons.forEach(function(button) {
-            button.response()
-        })
         setTimeout(function(){
             simon.brain.simonSays();
             counter= 1
             timer = setInterval(function(){
                  $('.time').html('Time: ' + counter++)
             },1000)
-        }, 4800)
+        }, 3500)
     })
     $('.insane').on('click', function(event) {
         simon.brain.userMoveSet = []
