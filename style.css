@@ -176,17 +176,17 @@ tbody tr:hover {
 
     .container > button{
         flex: 0 2 50%;
-        margin: 0 10em;
+        margin: 0 0em;
         padding: 0em;
     }
     .time{
-        margin: 0em 7em 0em 0em;
+        margin: 0em 0em 0em 0em;
         float: right;
         display: inline-block;
     }
 
     .round{
-        margin: 0em 0em 0em 7em;
+        margin: 0em 0em 0em 0em;
         display: inline-block;
     }
 }
