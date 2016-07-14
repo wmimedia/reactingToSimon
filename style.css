@@ -161,3 +161,25 @@ tbody tr:hover {
 	position:relative;
 	top:1px;
 }
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)  {
+.container > button{
+    flex: 0 2 50%;
+    margin: 0 10em;
+    padding: 0em;
+    }
+.time{
+    margin: 0em 7em 0em 0em;
+    float: right;
+    display: inline-block;
+    }
+
+.round{
+    margin: 0em 0em 0em 7em;
+    display: inline-block;
+    }
+
+
+}
