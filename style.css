@@ -178,6 +178,7 @@ tbody tr:hover {
 
 @media (min-width: 790px) {
 
+
     .container > button{
         flex: 0 2 50%;
         margin: 0 20em;
@@ -192,5 +193,18 @@ tbody tr:hover {
     .round{
         margin: 0em 0em 0em 10em;
         display: inline-block;
+    }
+    .start {
+    	background-color:transparent;
+    	border-radius:28px;
+    	border:1px solid #ffffff;
+        margin: 0 10em;
+    	cursor:pointer;
+    	color:#ffffff;
+    	font-family:Arial;
+    	font-size:12px;
+    	padding:3px 400px;
+    	text-decoration:none;
+    	text-shadow:0px 1px 0px #2f6627;
     }
 }
